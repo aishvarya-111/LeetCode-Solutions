@@ -1,8 +1,18 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> List[int]:
-        a =[]
-        for i in range(len(nums)):
-            if nums[i] not in nums[i+1:] and nums[i] not in nums[:i]:
-                a.append(nums[i])
-        return a
+        if len(nums) == 1:
+            return nums[0]
+        dicts = {}
+        for i in nums:
+            if i in dicts:
+                dicts[i] += 1
+            else:
+                dicts[i] = 1                        
+                
+        s = []
+        for k,v in dicts.items():
+            if v == 1:
+                s.append(k)
+                
+        return s
         
