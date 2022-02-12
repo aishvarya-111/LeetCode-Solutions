@@ -1,6 +1,6 @@
 import math
 class Solution:
     def isBoomerang(self, p: List[List[int]]) -> bool:
-        area = 1/2 * abs(p[0][0]*(p[1][1]-p[2][1])+p[1][0]*(p[2][1]-p[0][1])+p[2][0]*(p[0][1]-p[1][1]))
+        area = abs(p[0][0]*(p[1][1]-p[2][1])+p[1][0]*(p[2][1]-p[0][1])+p[2][0]*(p[0][1]-p[1][1]))
         return area!=0
         
