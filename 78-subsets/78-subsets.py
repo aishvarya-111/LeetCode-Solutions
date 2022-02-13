@@ -5,7 +5,6 @@ class Solution:
         for i in range(1,n):
             s = bin(i)[2:]
             s=s[::-1]
-            print(s)
             h=[]
             for j in range(len(s)):
                 if(s[j]=='1'):
