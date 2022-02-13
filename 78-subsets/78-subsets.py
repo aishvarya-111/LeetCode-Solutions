@@ -3,8 +3,8 @@ class Solution:
         n = pow(2,len(nums))
         a=[[]]
         for i in range(1,n):
-            s = bin(i)[2:]
-            s=s[::-1]
+            s = list(bin(i)[2:])
+            s = s[::-1]
             h=[]
             for j in range(len(s)):
                 if(s[j]=='1'):
