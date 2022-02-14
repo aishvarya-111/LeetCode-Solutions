@@ -4,7 +4,6 @@ class Solution:
     def findTwoElement( self,arr, n): 
         # code here
         arr.sort()
-        l = [*range(1,n+1)]
         r = sum(arr) - sum(set(arr))
         sn = (n*(n+1))//2
         a = sn-sum(set(arr))
