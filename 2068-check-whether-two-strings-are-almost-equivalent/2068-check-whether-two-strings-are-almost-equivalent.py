@@ -4,10 +4,12 @@ class Solution:
         d1 = Counter(word1)
         d2 = Counter(word2)
         for k,v in d1.items():
-            if abs(v-d2[k])>3:
+            if k in d2 and abs(v-d2[k])>3:
+                return False
+            if k not in d2 and v>3:
                 return False
         for k,v in d2.items():
-            if abs(v-d1[k])>3:
+            if k not in d1 and v>3:
                 return False
         return True
                 
