@@ -1,13 +1,11 @@
 # function to calculate minimum numbers of characters
 # to be removed to make two strings anagram
 def remAnagram(str1,str2):
-    
-    s = str1
-    for i in s:
+    for i in str1:
         if i in str2:
-            s = s.replace(i,"",1)
+            str1 = str1.replace(i,"",1)
             str2 = str2.replace(i,"",1)
-    n = len(s)+len(str2)
+    n = len(str1)+len(str2)
     return n
     #add code here
     
