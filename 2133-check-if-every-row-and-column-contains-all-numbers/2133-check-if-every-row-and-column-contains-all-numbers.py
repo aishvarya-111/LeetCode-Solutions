@@ -7,10 +7,7 @@ class Solution:
             if sorted(i)!=p:
                 return False
         
-        for j in range(n):
-            row=[]
-            for k in range(n):
-                row.append(matrix[k][j])
-            if sorted(row)!=p:
+        for j in zip(*matrix):
+            if sorted(j)!=p:
                 return False
         return True
