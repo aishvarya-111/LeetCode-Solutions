@@ -3,7 +3,7 @@ class Solution:
         if len(nums)==1:
             return 0
         nums.sort(reverse=True)
-        mi = sum(nums)
+        mi = nums[0]
         for i in range(len(nums)-k+1):
             m = nums[i] - nums[i+k-1]
             if m<mi:
