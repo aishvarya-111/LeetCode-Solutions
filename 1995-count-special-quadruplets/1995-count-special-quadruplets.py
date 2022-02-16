@@ -1,8 +1,12 @@
-from itertools import combinations
+#from itertools import combinations
 class Solution:
     def countQuadruplets(self, nums: List[int]) -> int:
-        res = 0
-        for i,j,k,l in combinations(range(len(nums)), 4):
-            if nums[i] + nums[j] + nums[k] == nums[l]:
-                res += 1
-        return res  
+        count, ans, n = Counter(), 0, len(nums)
+        for a in range(n-1, 0, -1):
+            for b in range(a-1, -1, -1):
+                ab = nums[a] + nums[b]
+                ans += count[ab]
+            for d in range(n-1, a, -1):
+                da = nums[d] - nums[a]
+                count[da] += 1
+        return ans
