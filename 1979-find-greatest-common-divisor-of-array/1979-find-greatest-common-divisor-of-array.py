@@ -1,6 +1,9 @@
 class Solution:
     def findGCD(self, nums: List[int]) -> int:
-        a, b = min(nums), max(nums)
-        while a:
-            a, b = b % a, a
-        return b
+        mn = min(nums)
+        mx = max(nums)
+        
+        for i in range(mx,0,-1):
+            if mx%i == 0 and mn%i == 0:
+                return i
+            
