@@ -4,7 +4,7 @@ class Solution:
         res = 0 
         for i in boxTypes:
             if truckSize==0:
-                break
+                return res
             if truckSize>=i[0]:
                 res+=(i[0]*i[1])
                 truckSize-=i[0]
