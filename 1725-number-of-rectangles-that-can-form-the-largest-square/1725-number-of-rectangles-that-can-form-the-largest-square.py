@@ -2,10 +2,7 @@ class Solution:
     def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
         mx = 0
         for i in rectangles:
-            if i[0]>=i[1]:
-                m = i[1]
-            else:
-                m = i[0]
+            m = min(i[0],i[1])
             if m>mx:
                 mx = m
                 count=1
