@@ -1,13 +1,15 @@
 class Solution:
     def findWords(self, words: List[str]) -> List[str]:
+        a = "qwertyuiopQWERTYUIOP"
+        b = "asdfghjklASDFGHJKL"
         res = []
         for i in words:
             aa,bb,cc,n = 0,0,0,len(i)
             for j in i:
                 if j in i:
-                    if j in "qwertyuiopQWERTYUIOP":
+                    if j in a:
                         aa+=1
-                    elif j in "asdfghjklASDFGHJKL":
+                    elif j in b:
                         bb+=1
                     else:
                         cc+=1
