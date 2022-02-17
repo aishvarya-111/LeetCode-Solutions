@@ -5,6 +5,6 @@ class Solution:
             if i == 1:
                 c+=1
             else:
-                pc = max(pc,c)
-                c = 0
-        return max(pc,c)
+                c=0   
+            pc = max(pc,c)
+        return pc
