@@ -8,6 +8,6 @@ class Solution:
             if s[i]==s[i-1]:
                 count+=1
             else:
-                ps = max(ps,count)
                 count = 1
-        return max(ps,count)
+            ps = max(ps,count)   
+        return ps
