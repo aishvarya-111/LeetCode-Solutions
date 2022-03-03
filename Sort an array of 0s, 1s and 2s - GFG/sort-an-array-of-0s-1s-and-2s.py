@@ -3,22 +3,16 @@
 class Solution:
     def sort012(self,arr,n):
         # code here
-        d = {}
+        a = [0,0,0]
         for i in arr:
-            if i in d:
-                d[i]+=1
-            else:
-                d[i]=1
-        
-        for i in range(d[0]):
-            arr[i]=0
-        for j in range(d[0],d[0]+d[1]):
-            arr[j]=1
-        for k in range(d[0]+d[1],d[0]+d[1]+d[2]):
-            arr[k]=2
-        
+            a[i]+=1
+        for i in range(a[0]):
+            arr[i] = 0
+        for i in range(a[0],a[0]+a[1]):
+            arr[i] = 1
+        for i in range(a[0]+a[1],a[0]+a[1]+a[2]):
+            arr[i] = 2
         return arr
-
 
 #{ 
 #  Driver Code Starts
