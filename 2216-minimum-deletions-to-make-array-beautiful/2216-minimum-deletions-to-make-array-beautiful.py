@@ -1,7 +1,5 @@
 class Solution:
     def minDeletion(self, nums: List[int]) -> int:
-        if len(nums)==0:
-            return 0
         ans = []
         c=0
         for i in nums:
