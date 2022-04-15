@@ -3,11 +3,17 @@
 class Solution:
     def findTwoElement( self,arr, n): 
         # code here
-        arr.sort()
-        r = sum(arr) - sum(set(arr))
-        sn = (n*(n+1))//2
-        a = sn-sum(set(arr))
-        return [r,a]
+        s1 = (n*(n+1))//2
+        s2 = (n*(n+1)*(2*n+1))//6
+        
+        for i in arr:
+            s1-=i
+            s2-=(i*i)
+        d = s2//s1
+        
+        m = (s1+d)//2
+        r = m-s1
+        return [r,m]
             
 
 #{ 
