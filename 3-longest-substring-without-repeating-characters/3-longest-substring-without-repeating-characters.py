@@ -8,7 +8,8 @@ class Solution:
             if i not in d:
                 d+=i
             else:
+                ans = max(ans,len(d))
                 ind = d.index(i)
                 d = d[ind+1:]+i
-            ans = max(ans,len(d))
+        ans = max(ans,len(d))
         return ans
