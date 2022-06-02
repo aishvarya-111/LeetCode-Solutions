@@ -1,16 +1,15 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        all_freq = {}
-  
-        for i in nums:
-            if i in all_freq:
-                all_freq[i] += 1
-            else:
-                all_freq[i] = 1
-         
-        m = max(all_freq.values())
         
-        for i,v in all_freq.items():
-            if v==m:
-                return i
+        m = nums[0]
+        c = 0
+        for i in nums:
+            if c==0:
+                m = i
+                c+=1 
+            elif m==i:
+                c+=1 
+            else:
+                c-=1
+        return m
         
