@@ -2,9 +2,13 @@
 
 
 class Solution:
-    def MissingNumber(self,array,n):
-        # code here
-        return (n*(n+1))//2 - sum(array)
+    def MissingNumber(self,a,n):
+        ans = 0
+        for i in range(n-1):
+            ans=ans^(a[i])
+        for i in range(1,n+1):
+            ans^=i
+        return ans
 
 #{ 
 #  Driver Code Starts
