@@ -3,13 +3,14 @@
 class Solution:
     ##Complete this function
     #Function to find the sum of contiguous subarray with maximum sum.
-    def maxSubArraySum(self,arr,N):
+    def maxSubArraySum(self,a,n):
         ##Your code here
-        m,c = arr[0],arr[0]
-        for i in arr[1:]:
-            c = max(i,c+i)
-            m = max(m,c)
-        return m
+        ans = a[0]
+        s = a[0]
+        for i in range(1,n):
+            s = max(a[i],s+a[i])
+            ans = max(ans,s)
+        return ans
 
 #{ 
 #  Driver Code Starts
