@@ -5,12 +5,9 @@ class Solution:
         while(i<len(nums)):
             rs-=nums[i]
             if ls==rs:
-                break
+                return i
             ls+=nums[i]
             i+=1 
             
-        if(i>=len(nums)):
-            return -1
-        else:
-            return i
+        return -1
         
