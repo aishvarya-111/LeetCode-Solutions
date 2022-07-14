@@ -1,15 +1,13 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        l = [0]*(10**4+5)
-        m = nums[0]
-        for i in range(len(nums)):
-            nums[i] = abs(nums[i])
-            l[nums[i]]+=1
-            m = max(m,nums[i])
-        j=0   
-        for i in range(m+1):
-            while(l[i]!=0):
-                nums[j] = i*i
-                j+=1
-                l[i]-=1
-        return nums
+        l,r = 0,len(nums)-1 
+        ans = [0]*(len(nums))
+        while(l<=r):
+            a,b = abs(nums[l]),abs(nums[r])
+            if a>b:
+                ans[r-l] = a*a 
+                l+=1
+            else:
+                ans[r-l]=b*b
+                r-=1 
+        return ans
