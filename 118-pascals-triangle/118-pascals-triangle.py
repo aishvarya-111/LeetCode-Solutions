@@ -1,13 +1,14 @@
 class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
-        if numRows == 1:
+    def generate(self, n: int) -> List[List[int]]:
+        if n == 1:
             return [[1]]
-        res = [[1],[1,1]]
-        for i in range(numRows-2):
-            l = res[-1]
+        ans=[]
+        for i in range(n):
             a = [1]
-            for i in range(len(l)-1):
-                a.append(l[i]+l[i+1])
-            a = a+[1]
-            res.append(a)
-        return res
+            res=1
+            for j in range(i):
+                res*=(i-j)
+                res/=(j+1)
+                a.append(int(res))
+            ans.append(a)
+        return ans
