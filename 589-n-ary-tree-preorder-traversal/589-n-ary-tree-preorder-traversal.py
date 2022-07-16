@@ -16,5 +16,11 @@ class Solution:
         if root is None:
             return 
         a=[]
-        self.recurse(root,a)
+        q = [root]
+        while q:
+            node = q.pop()
+            a.append(node.val)
+            for i in node.children[::-1]:
+                if i:
+                    q.append(i)
         return a
