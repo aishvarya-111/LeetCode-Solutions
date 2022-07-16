@@ -5,13 +5,14 @@ class Solution:
     #Function to find the sum of contiguous subarray with maximum sum.
     def maxSubArraySum(self,a,n):
         ##Your code here
-        ans = a[0]
-        s = a[0]
-        for i in range(1,n):
-            s = max(a[i],s+a[i])
-            ans = max(ans,s)
-        return ans
-
+        s = 0
+        m = a[0]
+        for i in range(n):
+            s+=a[i]
+            m = max(m,s)
+            if s<0:
+                s=0 
+        return m
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
