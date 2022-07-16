@@ -17,7 +17,8 @@ class Solution:
         n = count-n
         for i in range(n):
             if curr.next:
-                prev = prev.next
-                curr = curr.next
-        prev.next = curr.next
+                prev = curr
+                curr = curr.next  
+        prev.next = curr.next 
+        curr.next = None
         return dummy.next
