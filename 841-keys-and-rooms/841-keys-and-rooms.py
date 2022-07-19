@@ -3,20 +3,18 @@ class Solution(object):
         """
         :type rooms: List[List[int]]
         :rtype: bool
-        """
         
-        n = len(rooms)
+        """
         v = [0]*len(rooms)
-        q = []
-        q.append(0)
-        while(q):
-            node = q.pop(0)
-            v[node]=1
+        def dfs(node):
+            if v[node]==0:
+                v[node]=1
+                
             for i in rooms[node]:
                 if v[i]==0:
-                    q.append(i)
-                    v[i]=1 
-                
-        if sum(v) == len(rooms):
-            return True
-        return False
+                    v[i]=1
+                    dfs(i)
+                    
+        dfs(0)
+        return sum(v)==len(rooms)
+        
