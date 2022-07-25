@@ -15,21 +15,18 @@ class Solution:
         #return True if(a==b) else False
         
         d = []
-        i = 0
-        while(i<len(s)):
+        for i in range(len(s)):
             if s[i]!='#':
                 d+=s[i]
             elif d:
                 d.pop()
-            i+=1 
-        
+           
         h = []
-        i = 0
-        while(i<len(t)):
-            if t[i]!='#':
-                h+=t[i]
+        for j in range(len(t)):
+            if t[j]!='#':
+                h+=t[j]
             elif h:
                 h.pop()
-            i+=1  
-        return True if(d==h) else False
+                
+        return d==h
     
