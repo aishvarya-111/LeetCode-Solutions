@@ -1,6 +1,5 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        
         def left(nums,target,n):
             l,r = 0,n-1
             while(l<=r):
