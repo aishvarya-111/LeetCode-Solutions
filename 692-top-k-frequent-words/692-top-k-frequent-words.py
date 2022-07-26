@@ -4,8 +4,9 @@ class Solution:
         
         for i in words:
             d[i]+=1
-        d = sorted(d.items(),key = lambda x:(-x[1],x[0]))
+            
+        t = heapq.nsmallest(k,d.items(),key = lambda x:[-x[1],x[0]])
         ans = []
-        for i in range(k):
-            ans.append(d[i][0])
+        for i in t:
+            ans.append(i[0])
         return ans
