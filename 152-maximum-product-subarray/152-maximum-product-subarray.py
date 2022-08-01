@@ -2,14 +2,10 @@ class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         if len(nums)==0:
             return 0
-        p = 1
         mi_val = 1
         mx_val = 1
-        ans = max(nums)
+        ans = nums[0]
         for i in range(len(nums)):
-            if nums[i]==0:
-                mi_val = 1
-                mx_val = 1
             curr = nums[i]
             x = min(curr,mi_val*curr,mx_val*curr)
             y = max(curr,mi_val*curr,mx_val*curr)
