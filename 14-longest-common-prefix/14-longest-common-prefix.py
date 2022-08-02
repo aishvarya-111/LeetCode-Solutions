@@ -6,9 +6,9 @@ class Solution:
         result = ""
         while(i<len(a) and i<len(b)):
             if(a[i]!=b[i]):
-              break
+                break
             result = result + a[i]
             i=i+1
-              
+             
         return result
               
